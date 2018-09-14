@@ -271,6 +271,7 @@ Options:\n\
 			lyra2       CryptoCoin\n\
 			lyra2v2     VertCoin\n\
 			lyra2z      ZeroCoin (3rd impl)\n\
+			lyra2zz     LAPO\n\
 			myr-gr      Myriad-Groestl\n\
 			neoscrypt   FeatherCoin, Phoenix, UFO...\n\
 			nist5       NIST5 (TalkCoin)\n\
@@ -2609,6 +2610,7 @@ static void *miner_thread(void *userdata)
 				break;
 			case ALGO_LYRA2:
 			case ALGO_LYRA2Z:
+			case ALGO_LYRA2ZZ:
 			case ALGO_ALLIUM:
 			case ALGO_NEOSCRYPT:
 			case ALGO_SIB:
@@ -2766,6 +2768,9 @@ static void *miner_thread(void *userdata)
 			break;
 		case ALGO_LYRA2Z:
 			rc = scanhash_lyra2Z(thr_id, &work, max_nonce, &hashes_done);
+			break;
+		case ALGO_LYRA2ZZ:
+			rc = scanhash_lyra2Zz(thr_id, &work, max_nonce, &hashes_done);
 			break;
 		case ALGO_ALLIUM:
 			rc = scanhash_allium(thr_id, &work, max_nonce, &hashes_done);

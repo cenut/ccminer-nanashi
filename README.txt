@@ -98,6 +98,7 @@ its command line interface and options.
                           lyra2       use to mine CryptoCoin
                           lyra2v2     use to mine Vertcoin
                           lyra2z      use to mine Zerocoin (XZC)
+                          lyra2zz     use to mine LAPO (LAX)
                           myr-gr      use to mine Myriad-Groest
                           neoscrypt   use to mine FeatherCoin, Trezarcoin, Orbitcoin, etc
                           nist5       use to mine TalkCoin
