@@ -38,7 +38,7 @@ ccminer_SOURCES	= elist.h miner.h compat.h \
 			  myriadgroestl.cpp cuda_myriadgroestl.cu \
 			  lyra2/Lyra2.c lyra2/Sponge.c \
 			  lyra2/lyra2RE.cu lyra2/cuda_lyra2.cu \
-		          lyra2/lyra2REv2.cu lyra2/cuda_lyra2v2.cu \
+		      lyra2/lyra2REv2.cu lyra2/cuda_lyra2v2.cu \
 			  lyra2/Lyra2Z.c lyra2/lyra2Z.cu lyra2/lyra2Zz.cu lyra2/cuda_lyra2Z.cu \
 			  Algo256/cuda_bmw256.cu Algo256/cuda_cubehash256.cu \
 			  Algo256/cuda_blake256.cu Algo256/cuda_groestl256.cu \
@@ -115,12 +115,12 @@ endif
 ccminer_LDADD += -lcuda
 
 nvcc_ARCH :=
-nvcc_ARCH += -gencode=arch=compute_70,code=\"sm_70,compute_70\"
-nvcc_ARCH += -gencode=arch=compute_61,code=\"sm_61,compute_61\"
-nvcc_ARCH += -gencode=arch=compute_52,code=\"sm_52,compute_52\"
+nvcc_ARCH += -gencode=arch=compute_60,code=\"sm_70,compute_60\"
+#nvcc_ARCH += -gencode=arch=compute_61,code=\"sm_61,compute_61\"
+#nvcc_ARCH += -gencode=arch=compute_52,code=\"sm_52,compute_52\"
 nvcc_ARCH += -gencode=arch=compute_50,code=\"sm_50,compute_50\"
-nvcc_ARCH += -gencode=arch=compute_35,code=\"sm_35,compute_35\"
-nvcc_ARCH += -gencode=arch=compute_37,code=\"sm_37,compute_37\"
+#nvcc_ARCH += -gencode=arch=compute_35,code=\"sm_35,compute_35\"
+#nvcc_ARCH += -gencode=arch=compute_37,code=\"sm_37,compute_37\"
 #nvcc_ARCH += -gencode=arch=compute_30,code=\"sm_30,compute_30\"
 
 nvcc_FLAGS = $(nvcc_ARCH) @CUDA_INCLUDES@ -I. @CUDA_CFLAGS@
